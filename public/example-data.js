@@ -2,10 +2,19 @@
 //assume array takes the form of [depth, velocity]
 
 
-
-const sampleData = function() {
-  //make a data set of 100 points
-  
+//generate a randomized quasi linear dataset
+const generateData = function() {
+  let x, y;
+  let step = 1
+  let dataArray = []
+  do {
+    x = Math.ceil(Math.random() * 30);
+    y = Math.ceil(x * Math.random() + 0.5);
+    dataArray.push([x,y]);
+    step ++
+  } while (step <= 100)
+  return dataArray;
 }
+const sampleData = generateData();
 
 module.exports = { sampleData } ;
