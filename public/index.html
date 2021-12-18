@@ -18,13 +18,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.flot.drawSeries.min.js" integrity="sha512-UsqUy8itE5ZGAXOx+7Ol7FiHgwrTA7XTDOuSWZk7fMbRBWNFQ/rtTzr6dXIR30m7s7t0/ghqKQFEwGvxysYyMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.flot.uiConstants.min.js" integrity="sha512-02f7kh8oGru0zDziDj2PSAa6OIhkh0FR8StvcTvmN6bsqzxnrD9TFP7TffYVbX5HLMjgL8syriRbn7W1zTq9DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <!-- Import graphing logic -->
-  <script src="/graph.js"></script>
+  <!-- Pretend that this file is your file that retrieves data from your back end
+  or something along those lines -->
+  <script type='module' src="/example-data.js"></script>
+
+  <!-- this is the file that will plot the graph and create the regression lines find where your code 
+  implements the plot statement and modify that piece of code accodringly -->
+  <script type='module' src="/graph.js"></script>
 
   <title>Document</title>
 </head>
 <body>
-  <p>hello world</p>
   <div id="placeholder" style="width:600px;height:300px"></div>
 </body>
 </html>

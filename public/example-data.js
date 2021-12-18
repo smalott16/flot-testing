@@ -1,7 +1,6 @@
 //lets just assume that this is where your back end deos all the work and returns data
 //assume array takes the form of [depth, velocity]
 
-
 //generate a randomized quasi linear dataset
 const generateData = function() {
   let x, y;
@@ -15,6 +14,5 @@ const generateData = function() {
   } while (step <= 100)
   return dataArray;
 }
-const sampleData = generateData();
 
-module.exports = { sampleData } ;
+export { generateData } ;
