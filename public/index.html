@@ -12,29 +12,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.canvaswrapper.min.js" integrity="sha512-yCfb+IqFgStEP61oU5jrZtdVjOvU83LEsWACL9yz/LVeVtkTOvGuvHbXxAxM1oKfyQwcM6rNJKZFlxBUEftwKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.colorhelpers.min.js" integrity="sha512-4CusJgDpVEsaymYcWuwe/Y+TMyyJJPuruXkW0nXrg6vlbKh7xBtVLCLU1yiWw3YacUghhnHqxe6tDU67XqSWJg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- jQuery-flot package -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.flot.js" integrity="sha512-GzTUEIEYsUnIsjjeFHNxX9mO4JTRcztouKrHl8ZejyU067oDfhhAd4mpOHygKkiXRuJr+AHF/v3y42Nk/LrvUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.flot.saturated.min.js" integrity="sha512-D0IA9fF9uH3Q6dTdjIOmnOrwROGVxXC3CO1dz5TxNNT10zRS/fCiAdxCovyLtYPS9v1S3usVL8lonvqb4Nr8JQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.flot.browser.min.js" integrity="sha512-VQd/q4C1w/PN6MI00uurfwSiFb6tLkt/ocprvkNjh7Dgf7phD3Z970CSxX5ni5aYC4bsinQtfKUk7aCL5bTQfQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.flot.drawSeries.min.js" integrity="sha512-UsqUy8itE5ZGAXOx+7Ol7FiHgwrTA7XTDOuSWZk7fMbRBWNFQ/rtTzr6dXIR30m7s7t0/ghqKQFEwGvxysYyMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.flot.uiConstants.min.js" integrity="sha512-02f7kh8oGru0zDziDj2PSAa6OIhkh0FR8StvcTvmN6bsqzxnrD9TFP7TffYVbX5HLMjgL8syriRbn7W1zTq9DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- regression package -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js" integrity="sha512-0k6FXllQktdobw8Nc8KQN2WtZrOuxpMn7jC2RKCF6LR7EdOhhrg3H5cBPxhs3CFzQVlO6ni1B9SDLUPhBs0Alg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Pretend that this file is your file that retrieves data from your back end
   or something along those lines -->
-  <script type='module' src="/example-data.js"></script>
+  <script type='module' src="./example-data.js"></script>
+  <script type='module' src="./regression.js"></script>
 
   <!-- this is the file that will plot the graph and create the regression lines find where your code 
   implements the plot statement and modify that piece of code accodringly -->
   <script type='module' src="/graph.js"></script>
 
-  <title>Document</title>
+  <title>flot testing</title>
 </head>
 <body>
   <div id="placeholder" style="width:600px;height:300px"></div>
 
   <h3>Regression Lines:</h3>
   <div id="regression-lines">
-    <input type="checkbox" id='lin-reg'>
+    <input id='lin-reg' type="checkbox">
     <label for='lin-reg'>Linear</label>
+    <input id='log-reg' type="checkbox">
+    <label for='log-reg'>Logrithmic</label>
   </div>
   
 </body>
