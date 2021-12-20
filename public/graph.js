@@ -9,43 +9,62 @@ $(function() {
   
   //set up a data structure to hold the raw data and eventually the regression lines
   //initialize the dataset with just the raw data
-  let displayData = [{
-    data: generateData(),
-    points: {show: true}
-  }]
-  renderPlot(displayData);
-
-  //refactor this since it doesn't work properly when using both lines
-  $('#lin-reg').on('click', function() {
-    if ($(this).attr('checked')) {
-      $(this).removeAttr('checked');
-      displayData.pop();
-    } else {
-      $(this).attr('checked', 'checked');
-      //the data that you pass in here will need to be processed to produce the regression of your choice
-      displayData.push({data: linearRegression(displayData[0].data)});
-    }
-    //re-render the plot each time it's clicked
-    renderPlot(displayData);
-  })
   
-  $('#log-reg').on('click', function() {
-    if ($(this).attr('checked')) {
-      $(this).removeAttr('checked');
-      displayData.pop();
-    } else {
-      $(this).attr('checked', 'checked');
-      //the data that you pass in here will need to be processed to produce the regression of your choice
-      displayData.push({data: logRegression(displayData[0].data)});
-    }
-    //re-render the plot each time it's clicked
-    renderPlot(displayData);
-  })
+  const rawData = generateData();
+  
+  let displayData = [
+    {
+      data: rawData,
+      points: {show: true}
+    },
+  ];
+  renderPlot(displayData);
+  
+  //object of possible regressions to include in the plot, custom properties can be added here based on flot API 
+  const regressions = {
+    linear: {
+      data: linearRegression(rawData),
+    },
+    logrithmic: {
+      data: logRegression(rawData),
+    }  
+  }
+  
+  //fire the following on click of any of the regression boxes
+  $('input').on('click', function() { 
+    
+    //toggle checked attribute
+    $(this).attr("checked", !$(this).attr('checked'));
+    
+    //reset the display array
+    displayData.splice(1, displayData.length - 1);
 
+    //build the array of included data - this needs to be refactored before it sees the light of day
+    const displayedRegressions = []; 
+    $('input').each(function(index) {
+      if ($(this).attr("checked")) {
+        displayedRegressions.push($(this).attr('id'));
+      }
+    })
+    
+    if (displayedRegressions.includes('lin-reg')) {
+      displayData.push(regressions.linear);
+    }
+    if (displayedRegressions.includes('log-reg')) {
+      displayData.push(regressions.logrithmic);
+    }
+
+    //re-render the entire plot whenever a button it clicked - should look into possibility of partial re-render of regression lines alone
+    renderPlot(displayData);
+    
+  });
+  
+  
 });
 
 const renderPlot = function(displayData) {
   $.plot($("#placeholder"), displayData);
-}
+};
+
 
 

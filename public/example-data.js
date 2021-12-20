@@ -11,7 +11,7 @@ const generateData = function() {
     y = Math.ceil(x * Math.random() + 0.5);
     dataArray.push([x,y]);
     step ++
-  } while (step <= 100)
+  } while (step <= 1000)
   return dataArray;
 }
 
