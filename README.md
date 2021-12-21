@@ -1,7 +1,7 @@
 # flot-testing
-Testing flot functionality to add regression lines to scatter plot data. Just an example for how flot works and how a regression line may be added using jQuery
+An example for how flot works and how a regression line may be added using jQuery. 
 
-This code is for demonstration purposes. It is by no means a comprehensive or optmized solution. 
+This code was developed for demonstration purposes for a colleague. 
 
 ## Getting started
 - This project requires Node.js to be installed
@@ -19,3 +19,10 @@ This code is for demonstration purposes. It is by no means a comprehensive or op
 ## CDN packages
 - jQuery 
 - regression-js 
+
+### Considerations
+- all regression functions fire on page load, it may be smarted to fire them as needed on click
+- jQuery could use some refactor
+- test with larger datasets
+- regression functions to be refactored based on the bounds of the incomming data
+- display regression function equations and R^2 value on the graph
