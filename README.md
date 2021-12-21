@@ -5,6 +5,7 @@ This code was developed for demonstration purposes for a colleague.
 
 ## Getting started
 - This project requires Node.js to be installed
+- cd into root of the project directory
 - run `$ npm install` from the command line 
 - run `$ npm start` to start the express server
 - visit http://localhost:8080 in your browser
