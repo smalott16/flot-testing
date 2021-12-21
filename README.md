@@ -1,5 +1,5 @@
 # flot-testing
-An example for how flot works and how a regression line may be added using jQuery. 
+An example for how flot works and how a regression line may be added using jQuery. Data are randomly generated and two regression models are provided as options. Regression model is estimated using regression-js package using least squares method. Other methods could be employed manually. 
 
 This code was developed for demonstration purposes for a colleague. 
 
@@ -8,6 +8,10 @@ This code was developed for demonstration purposes for a colleague.
 - run `$ npm install` from the command line 
 - run `$ npm start` to start the express server
 - visit http://localhost:8080 in your browser
+
+## Screenshot
+<img src='https://github.com/smalott16/flot-testing/blob/main/docs/Screen%20Shot%202021-12-20%20at%207.55.33%20PM.png?raw=true' alt='screenshot'
+width='600px'>
 
 ## Dependencies
 - Node.js
