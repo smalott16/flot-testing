@@ -7,7 +7,7 @@ const generateData = function() {
   let step = 1
   let dataArray = []
   do {
-    x = Math.floor(Math.random() * 31);
+    x = Math.ceil(Math.random() * 31);
     y = Math.floor(x * Math.random() + 0.5);
     dataArray.push([x,y]);
     step ++
